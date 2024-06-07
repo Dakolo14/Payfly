@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -16,7 +15,6 @@ import { Input } from "@/components/ui/input"
 import { SigninValidation } from "@/lib/validation";
 import Loader from "@/components/shared/Loader";
 import { Link } from "react-router-dom";
-import { createUserAccount } from "@/lib/appwrite/api";
 
 
 
@@ -32,10 +30,6 @@ const SigninForm = () => {
     },
   })
  
-  // 2. Define a submit handler.
-  async function onSubmit(values: z.infer<typeof SigninValidation>) {
-    
-  }
 
   return (
       <Form {...form}>
@@ -45,7 +39,7 @@ const SigninForm = () => {
           <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Log In to your account</h2>
           <p className="text-light-3 small-medium md:base-regular">To use PayFly, enter you details</p>
         
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5 w-full mt-4">
+        <form onSubmit={() => {}} className="flex flex-col gap-5 w-full mt-4">
           <FormField
             control={form.control}
             name="email"
